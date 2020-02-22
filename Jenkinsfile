@@ -24,21 +24,5 @@ node{
 
         sh label: '', script: 'docker push sushantac/auth-service:0.0.1'
     }
-
-    stage('Run container on Dev server'){
-        try{
-            sh label: '', script: 'docker stop auth-service'
-        } catch(all) {
-
-        }
-        
-        try{
-            sh label: '', script: 'docker rm auth-service'
-        } catch(all) {
-
-        }
-
-        sh label: '', script: 'docker run -d -p 8001:8001 --name auth-service sushantac/auth-service:0.0.1'
-    }
-    
+  
 }
